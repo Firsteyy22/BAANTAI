@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAFT 3</title>
+    <link rel="icon" href="images/baantai-circle.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+--dark-color-lighten: #f2f5ff;
+--org-card: #dc4028;
+--btn: #141414;
+--btn-hover: #212121;
+--text: #fbf7f7;
+}
+
+/*===== RESET =====*/
+*,
+::before,
+::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+height: 100vh;
+width: 100vw;
+padding: 0 35px;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+background-color: #f3a126;
+}
+
+button {
+font-family: "Montserrat", sans-serif;
+display: inline-block;
+border: none;
+outline: none;
+border-radius: 0.2rem;
+color: var(--text);
+cursor: pointer;
+width: auto; /* Adjust as needed */
+padding: 0.5em 1em;
+font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    button {
+        width: auto; /* Adjust the width to fill the screen */
+        padding: 0.3em 0.8em; /* Adjust padding for a more compact size */
+        font-size: 0.9rem; /* Adjust the font size for better visibility */
+    }
+}
+
+
+a {
+text-decoration: none;
+}
+
+img {
+max-width: 100%;
+height: auto;
+user-select: none;
+}
+
+
+
+/*===== CARD =====*/
+.container {
+  display: flex;
+height: 100%;
+width: 100%; 
+margin: auto;
+align-items: center;
+padding: 10rem;
+}
+
+
+
+.carousel-container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Style for the card carousel */
+.carousel {
+overflow: hidden;
+align-items: center;
+justify-content: center;
+}
+
+.card {
+position: relative;
+padding: 1rem;
+height: 450px;
+width: 100%; /* Adjust as needed */
+border-radius: 0.9rem;
+background-color: var(--org-card);
+color: var(--text);
+cursor: pointer;
+margin: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.carousel .card {
+scroll-snap-align: start;
+list-style: none;
+flex-direction: column;
+}
+
+.product-image {
+height: 230px;
+max-width: 100%; /* Adjust as needed */
+transition: transform 500ms ease-in-out;
+display: flex; /* Add this */
+justify-content: center; /* Add this */
+margin: 0 auto; /* This centers the image horizontally */
+}
+
+.product-info {
+text-align: center;
+padding: 10px;
+}
+
+.card:hover .product-image {
+transform: scale(0.9);
+}
+
+.btn {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+margin-top: 0.8rem;
+}
+
+.buy-btn {
+background-color: var(--btn);
+margin: 10px;
+padding: 0.6rem 3.5rem;
+font-weight: 600;
+font-size: 1rem;
+transition: 300ms ease;
+}
+
+.buy-btn:hover {
+color: #dc4028;
+background-color: #fff;
+}
+
+.fav {
+box-sizing: border-box;
+background: #fff;
+padding: 0.5rem 0.5rem;
+border: 1px solid #000;
+display: grid;
+place-items: center;
+}
+
+.svg {
+height: 25px;
+width: 25px;
+fill: #fff;
+transition: all 500ms ease;
+}
+
+.fav:hover .svg {
+fill: #f06785;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+    /* Add more responsive styles as needed */
+}
+
+.buy-btn a {
+    color: inherit; /* Use the inherit property to maintain the original color */
+    text-decoration: none; /* Remove underline if needed */
+}
+
+.buy-btn a:visited {
+    color: inherit; /* Maintain the color after the link is visited */
+}
+
+
+#videoContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0); /* Initial background transparency (0 to 1) */
+    transition: background 0.5s ease; /* Smooth transition effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoContainer.show {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Adjusted transparency on button click */
+}
+
+#closeButton {
+    position: absolute;
+    top: 180px;
+    right: 150px;
+    color: white;
+    cursor: pointer;
+    font-size: 32px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html">
+          <img src="images/baantai-circle.png" style="width: 5rem; height: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <hr>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="home.html?#carouselExampleFade">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Map
+              </a>
+              <ul class="dropdown-menu" id="province-dropdown">
+                <li><a class="dropdown-item" href="draft03.html?province=Chumphon">ชุมพร</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Ranong">ระนอง</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Surat_Thani">สุราษฎร์ธานี</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Phang_Nga">พังงา</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Phuket">ภูเก็ต</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Krabi">กระบี่</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Nakhon_Si_Thammarat">นครศรีธรรมราช</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Trang">ตรัง</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Phatthalung">พัทลุง</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Songkhla">สงขลา</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Satun">สตูล</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Pattani">ปัตตานี</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Yala">ยะลา</a></li>
+                <li><a class="dropdown-item" href="draft03.html?province=Narathiwat">นราธิวาส</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="home.html?#highlights">Highlights</a>
+            </li>      
+            <li class="nav-item">
+              <a class="nav-link" href="whattoeat.html">What to eat</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link" href="favorites.html">Favorites</a>
+            </li>      
+          </ul>
+          <hr>
+          <!-- **จะใส่เป็น MEMBER / LOGIN ** -->
+          <a href="login.html" id="logbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>
+          </a>
+          <br>
+        </div>
+      </div>
+    </nav>
+  <!-- END OF HEADER-->
+
+
+<!-- Content -->
+<main alt="ProvinceContent">
+    <div class="content-section" id="RanongContent" style="display: none;">
+    <ul class="slider container carousel-container" alt="ranong01">
+        <li class="card">
+            <div class="product-info">
+                <h1>ยาวเย</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/ranong/rnFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('KKsGMy0blNw?si=UqY8fO8EMQSPaMaW')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ก๊กซิมบี้</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/ranong/rnFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('7Ytn47APKss?si=ARW-J8VYwWim-UZd')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">ยำยอดกาหยู</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/ranong/rnFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('6isZBXGEn7o?si=roIEoYvFXHtMJQ83')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ชุนเปี๊ยะ</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/ranong/rnFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('dQPpaOUZ9_M?si=fga_eVaDIoypJmK6')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>อาโป้ง</h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/ranong/rnFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('AzbxoCuqUtw?si=IZtfpy-IVLP6YeGs')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ฮู้เกี่ยมทึ้ง</h1>
+            </div>
+            <section alt="menu 6">
+                <div class="product-image">
+                  <img src="images/ranong/rnFood6-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('ikW5xQhGVm0?si=pnLipfYj9u6F1Mxf')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+    </ul>
+    </div>
+
+    <div class="content-section" id="Phang_NgaContent" style="display: none;">
+    <ul class="slider container carousel-container" alt="phangnga02">
+        <li class="card">
+        <div class="product-info">
+            <h1>อาจาดหู</h1>
+        </div>
+        <section alt="menu 1">
+            <div class="product-image">
+              <img src="images/phanggna/phgFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+            </div>
+            <div class="btn">
+                <button class="buy-btn" onclick="showVideo('FFykr_KUnG4?si=4toY2k_2IYEPzby6')">EXPLORE NOW</button>
+                <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                </button>
+            </div>                
+        </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>เต้าส้อ</h1>
+        </div>
+        <section alt="menu 2">
+            <div class="product-image">
+              <img src="images/phanggna/phgFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('grwMqs-oBr4?si=4JMJCv67RVoAsDo_')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>จอแหร้ง</h1>
+        </div>
+        <section alt="menu 3">
+            <div class="product-image">
+              <img src="images/phanggna/phgFood3.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('EGx-Fx725IQ?si=sIQDUPlgZ5qVd-ic')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>น้ำชุบหยำ</h1>
+        </div>
+        <section alt="menu 4">
+            <div class="product-image">
+              <img src="images/phanggna/phgFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('vrjKIlEbcxg?si=rZPpoqpOJ_Jd7KdG')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>แกงไตปลา</h1>
+        </div>
+        <section alt="menu 5">
+            <div class="product-image">
+              <img src="images/phanggna/phgFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('Q_SJyDI2Cic?si=eINtQ0r7-2fLySoG')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    </ul>
+    </div>   
+    
+    <div class="content-section" id="PhuketContent" style="display: none;">
+    <ul class="slider container carousel-container" alt="phuket03">
+        <li class="card">
+        <div class="product-info">
+            <h1 style="font-size: 32px;">ใบเหลียงผัดไข่</h1>
+        </div>
+        <section alt="menu 1">
+            <div class="product-image">
+              <img src="images/phuket/hktFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+            </div>
+            <div class="btn">
+                <button class="buy-btn" onclick="showVideo('T027624mJ8w?si=smS_eZj0PQDO4_rW')">EXPLORE NOW</button>
+                <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                </button>
+            </div>                
+        </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1 style="font-size: 32px;">หมูผัดเคยเค็ม</h1>
+        </div>
+        <section alt="menu 2">
+            <div class="product-image">
+              <img src="images/phuket/hktFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('7fLvzpsaGi4?si=G7a7v3IZzXTpvCt0')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>โอ้วเอ๋ว</h1>
+        </div>
+        <section alt="menu 3">
+            <div class="product-image">
+              <img src="images/phuket/hktFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('dxAZ1-mqxio?si=EK-NgQ4JRwzMY-ex')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>หมูฮ้อง</h1>
+        </div>
+        <section alt="menu 4">
+            <div class="product-image">
+              <img src="images/phuket/hktFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('beS6Bh-_Jf0?si=kMh47DGXvFCjsXdR')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>โลบะ</h1>
+        </div>
+        <section alt="menu 5">
+            <div class="product-image">
+              <img src="images/phuket/hktFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('fiisJxBlJ2U?si=M2pUJN1PQwSmJd-N')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    <li class="card">
+        <div class="product-info">
+            <h1>โอวต้าว</h1>
+        </div>
+        <section alt="menu 6">
+            <div class="product-image">
+              <img src="images/phuket/hktFood6-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+            </div>
+            <div class="btn">
+              <button class="buy-btn" onclick="showVideo('_z6qrMlwwOE?si=TGdc_S-LDwoSMcnf')">EXPLORE NOW</button>
+              <button class="fav">
+                <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>            
+              </button>
+            </div>
+          </section>
+    </li>
+    </ul>
+    </div>
+
+    <div class="content-section" id="KrabiContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="krabi04">
+            <li class="card">
+            <div class="product-info">
+                <h1>ข้าวยำบูดู</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/krabi/krabiFood01-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('g1-sPJ-UKnU?si=onptjMzhvxhJUUSq')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">ปลาจุกเครื่อง</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/krabi/krabiFood02-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('ubWetnIH7eg?si=NhVK5I2GsALsjdSU')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>เคยนึ่ง</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/krabi/krabiFood03-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('zjRApaL_x_A?si=F5bdhUwPB-OiPh8b')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>หอยชักตีน</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/krabi/krabiFood04-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('L0HmlDiYvdQ?si=ISt8ZbJKJ5aTicBz')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+
+    <div class="content-section" id="TrangContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="trang05">
+            <li class="card">
+            <div class="product-info">
+                <h1>โกยุก</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/trang/trangFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('Oko-yal2obw?si=hv9t6LJTX4PMKtSe')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 30px;">หมูย่างเมืองตรัง</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/trang/trangFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('xuEOP8dDOY0?si=rPRCmx3lFvAnkUa4')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">หมี่หนำเหลี่ยว</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/trang/trangFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('czX7jlu6Lm8?si=xAcgQsYI_CFVYtXu')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">เค้กเมืองตรัง</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/trang/trangFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('_OpFxgCRals?si=QokimMP1BFLGBXed')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+
+    <div class="content-section" id="SatunContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="satun06">
+            <li class="card">
+            <div class="product-info">
+                <h1>แกงปัจรี</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/satul/stFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('AlmJG0afr54?si=ce4H_B6ACSmTbSto')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ปัสมอส</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/satul/stFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('p4FDEv5R0Tw?si=VGCqM2FWAZz1-tcv')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">แกงตอแมะห์</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/satul/stFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('FrV8bKC2cXE?si=U5qsVow8u4jRCFkU')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 32px;">ขนมบุหงาบูดะ</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/satul/stFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('74RfS-OpNY4?si=mJWDbfxiCHWyqxJM')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+
+    <div class="content-section" id="YalaContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="yala07">
+            <li class="card">
+            <div class="product-info">
+                <h1>ไก่ฆอและ</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/yala/yalaFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('KqPcKxkqIOs?si=YTzeuuS4GPvTkn5p')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ละแซ</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/yala/yalaFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('YO37usr1QOw?si=AM_2akPAp4cIWgiW')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ซุปหางวัว</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/yala/yalaFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('m3XbyBmh0I8?si=lmO9AwT17PiG5ykg')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ข้าวยำโจร</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/yala/yalaFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('F5QrASzbB_M?si=mdimF267dFt_tQWB')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">ซาเลาะลาดอ </h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/yala/yalaFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('IJd9e2RtWgg?si=hKBjWCTQKNNfFqPO')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>โรตีซอราย</h1>
+            </div>
+            <section alt="menu 6">
+                <div class="product-image">
+                  <img src="images/yala/yalaFood6-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('HykRN8naAQw?si=7UTMfGaT5RhmuLte')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="NarathiwatContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="narathiwat08">
+            <li class="card">
+            <div class="product-info">
+                <h1>ขนมอาเกาะ</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/narathiwat/nrFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('89qKeolFSII?si=kOQNtehOwAslVfBg')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>นาซิดาแฆ</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/narathiwat/nrFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('8pc5CoLHNLI?si=jUTEsrIyRGgkpGZs')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ละแซ</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/narathiwat/nrFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('8PHwdJP0Z4g?si=YgTVcbV8w94z39Ni')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>กือโป๊ะ</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/narathiwat/nrFood04-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('YgYWD6H8eYM?si=QXEVdA-78fBpeXm-')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ไก่กอและ</h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/narathiwat/nrFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('S9knIlwBWmY?si=_7jbmcdKgfJy07j7')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="PattaniContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="pattani09">
+            <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">น้ำพริกทุเรียน</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/pattani/ptnFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('9R6q5FY0ZEU?si=2XGzX76N7kRS0wz_')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>สมันกุ้ง</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/pattani/ptnFood2.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('Up8HQBih4Is?si=7y-qFDZVW7fdKSCT')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ปืองะยืยงิง</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/pattani/ptnFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('Y4S9s4qux5s?si=_K7MVR0l0uLFzkxy')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>กาบูยาตง</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/pattani/ptnFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('xft6njrDk98?si=jLuUEmSzkp8CObOf')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ซาโยโกโล๊ะ</h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/pattani/ptnFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('WV-FA93MstE?si=QlO8f6Jrmm34E4aF')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>มะตะบะ</h1>
+            </div>
+            <section alt="menu 6">
+                <div class="product-image">
+                  <img src="images/pattani/ptnFood6-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('n0QsawzMcnI?si=g4Sc81GO3mZwzqRC')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="SongkhlaContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="songkhla10">
+            <li class="card">
+            <div class="product-info">
+                <h1>ข้าวสตู </h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/songklha/skFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('-vaxaZjNgz4?si=4In3ifRqWcdqbskS')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 30px;">ไก่ทอดหาดใหญ่</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/songklha/skFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('MAEItT_5y20?si=7-nBL_Ecnfq-6Sjq')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ขนมดู</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/songklha/skFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('rcJIYZ6ToNQ?si=L5de5HCNyqg_xfhn')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ขนมปำจี</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/songklha/skFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('EuPh1qfJTNE?si=PSOT22sDZ2ejPvaU')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="PhatthalungContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="phatthalung11">
+            <li class="card">
+            <div class="product-info">
+                <h1>ปลาดุกร้า</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/pattalhung/ptFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('4sPAT10jkGw?si=KS1Y9UfG3Mn9no-M')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>กาละแม</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/pattalhung/ptFood2-removebg-preview (1).png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('wSSztAuPOCA?si=6dPmTRxczB6jOO1i')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>เต้าคั่ว</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/pattalhung/ptFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('8sMS81qxfRQ?si=XSXkRINjwnq5uE9g')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>แกงแม่ขมิ้น</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/pattalhung/ptFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('oW6-xNIdK4I?si=mBhQk8-rkmTO7fls')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 24px;">น้ำหริกฝานกินแหนม</h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/pattalhung/ptFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('cFjk6oPxACo?si=pSCYGaUXsm7cm1q6')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="Nakhon_Si_ThammaratContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="nakhon12">
+            <li class="card">
+            <div class="product-info">
+                <h1>ขนมปะดา</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/nakhon/nkFood01-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('NkHw12kB1Bc?si=hrbL2Qaa7r2KBZn0')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">ขนมกวนขาว</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/nakhon/nkFood02-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('otKqLa5c7NA?si=2J9B1mwlqU5rywxZ')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>มังคุดคัด</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/nakhon/nkFood03-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('nxanD5j9jJw?si=GjNMlnPduKyERjBK')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 30px;">แกงส้มมังคุดคัด</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/nakhon/nkFood04-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('igcw0OhZAYk?si=my_FRc5tXp1Z7xDb')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 26px;">ข้าวแกงเมืองคอน</h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/nakhon/nkFood05-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('fihJknnyG9E?si=HTxN_C_bAWznzt4U')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="Surat_ThaniContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="surat13">
+            <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 26px;">แกงขมิ้นไตปลาโบราณ </h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/surat/srFood1-removebg-preview.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('9GgpMo8_KaM?si=A56OxEqrecA1dXQy')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">ผัดไทยท่าฉาง</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/surat/srFood2-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('H8uPvsb9zdk?si=VleW1b4PfUV2mZu1')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>โล้งโต้ง</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/surat/srFood3-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('WhTUDTG1-p0?si=Cc5pnnho1KIUAS3r')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 30px;">พระรามลงสรง</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/surat/srFood4-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('vJl7-bvN7h4?si=UoMhS_8QcbVOGGAg')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ยำปลาเม็ง</h1>
+            </div>
+            <section alt="menu 5">
+                <div class="product-image">
+                  <img src="images/surat/srFood5-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('_b-KyNZrgIw?si=VYv3Ue9YT-jQ85P-')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 34px;">น้ำพริกมุงมัน</h1>
+            </div>
+            <section alt="menu 6">
+                <div class="product-image">
+                  <img src="images/surat/srFood6-removebg-preview.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('cMzwiGuTzOw?si=QT0GfMHq8GvwCq8e')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="ChumphonContent" style="display: none;">
+        <ul class="slider container carousel-container" alt="chumphon14">
+            <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 26px;">แกงส้มหยวกกล้วยกับหมูสามชั้น</h1>
+            </div>
+            <section alt="menu 1">
+                <div class="product-image">
+                  <img src="images/choomporn/cpFood01.png" alt="OFF-white Red Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                    <button class="buy-btn" onclick="showVideo('w2tovfwSmiQ?si=1ek9NVbAkW5NM9n5')">EXPLORE NOW</button>
+                    <button class="fav">
+                        <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </button>
+                </div>                
+            </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 26px;">ปลาหมึกต้มหวาน</h1>
+            </div>
+            <section alt="menu 2">
+                <div class="product-image">
+                  <img src="images/choomporn/cpFood02.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('N4cUufSXnak?si=wbt9zOgBGn1_Paap')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1 style="font-size: 31px;">ข้าวต้มใบกะพ้อ</h1>
+            </div>
+            <section alt="menu 3">
+                <div class="product-image">
+                  <img src="images/choomporn/cpFood03.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('Q0gn4KmYAt8?si=4i76vwb7Flz4MA7r')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        <li class="card">
+            <div class="product-info">
+                <h1>ศิลาอ่อน</h1>
+            </div>
+            <section alt="menu 4">
+                <div class="product-image">
+                  <img src="images/choomporn/cpFood04.png" alt="OFF-white Blue Edition" draggable="false" />
+                </div>
+                <div class="btn">
+                  <button class="buy-btn" onclick="showVideo('6u7_-PqrShs?si=jVmqP_X7jYqqemKo')">EXPLORE NOW</button>
+                  <button class="fav">
+                    <svg class="svg" id="i-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>            
+                  </button>
+                </div>
+              </section>
+        </li>
+        </ul>
+    </div>
+</main>
+<!-- End of Content -->
+
+
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            swipe: true, // Enable touch swipe
+            });
+        });
+      </script>
+      
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Get the selected province from the URL
+        const selectedProvince = getUrlParameter('province');
+
+        // Display content based on the selected province
+        const provinces = ['Ranong', 'Phang_Nga', 'Phuket', 'Krabi', 'Trang', 'Satun', 'Yala', 'Narathiwat', 'Pattani', 'Songkhla', 'Phatthalung', 'Nakhon_Si_Thammarat', 'Surat_Thani', 'Chumphon'];
+
+        provinces.forEach(province => {
+            const provinceContent = document.getElementById(`${province}Content`);
+            if (selectedProvince === province) {
+                provinceContent.style.display = 'block';
+            } else {
+                provinceContent.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<div id="videoContainer">
+    <!-- Video iframe -->
+    <iframe id="videoIframe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    
+    <!-- Close button initially hidden -->
+    <i id="closeButton" onclick="closeVideo()" style="display: none;">&#10006;</i>
+</div>
+    <script>
+    function showVideo(videoID) {
+        // Construct the YouTube embed iframe with the provided video ID
+        var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
+        
+        // Display the iframe in the 'videoIframe' div
+        document.getElementById('videoIframe').src = "https://www.youtube.com/embed/" + videoID;
+
+        // Toggle the 'show' class for the background styling
+        document.getElementById('videoContainer').classList.toggle('show');
+        
+        // Show the close button
+        document.getElementById('closeButton').style.display = 'block';
+    }
+
+    // Function to close the video
+    function closeVideo() {
+        var videoContainer = document.getElementById('videoContainer');
+        
+        // Hide the close button
+        document.getElementById('closeButton').style.display = 'none';
+
+        // Hide the video container
+        videoContainer.classList.remove('show');
+
+        // Clear the iframe content
+        document.getElementById('videoIframe').src = "";
+    }
+    </script>
+
+
+      <footer><p>&copy; 2023 BAANTAI</p></footer>
+</body>
+</html>

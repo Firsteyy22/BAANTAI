@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Eat</title>
+    <link rel="icon" href="images/baantai-circle.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+      * {
+  box-sizing: border-box;
+}
+
+.nametag {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  transform: rotate(-3deg);
+  box-shadow: 1px 1px 3px #343434;
+}
+
+.nametag div:nth-of-type(1) {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font: 28pt "Impact", sans-serif;
+  background: #dc4028;
+  color: #fafafa;
+  letter-spacing: 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.nametag div:nth-of-type(1) i {
+  display: block;
+  font: 12pt "Helvetica", sans-serif;
+  font-style: italic;
+}
+
+.nametag div:nth-of-type(2) {
+  width: 100%;
+  background: #fafafa;
+  padding: 10px;
+  font: 24pt "Comic Sans MS", "Chalkduster", cursive, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.nametag div:nth-of-type(3) {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font: 28pt "Impact", sans-serif;
+  background: #dc4028;
+  color: #fafafa;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.newname {
+  display: block;
+  width: 250px;
+  background: #fafafa;
+  color: #787985;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font: 14pt "Helvetica", sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 15px;
+  box-shadow: 1px 1px 3px #343434;
+  transition: all 0.5s;
+}
+
+.newname:hover {
+  box-shadow: 0px 0px 0px #fff;
+  background: #eaeaea;
+}
+
+.newname:active {
+  background: #cacaca;
+  letter-spacing: -2px;
+  width: 200px;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+height: 100vh;
+width: 100vw;
+padding: 15rem;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+background-color: #f3a126;
+}
+
+.pictag{
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: -140px;
+}
+
+.pictag img {
+  width: 35vw;
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Maintain the aspect ratio while resizing */
+}
+
+    </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">
+        <img src="images/baantai-circle.png" style="width: 5rem; height: auto;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <hr>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home.html?#carouselExampleFade">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Map
+            </a>
+            <ul class="dropdown-menu" id="province-dropdown">
+              <li><a class="dropdown-item" href="draft03.html?province=Chumphon">ชุมพร</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Ranong">ระนอง</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Surat_Thani">สุราษฎร์ธานี</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Phang_Nga">พังงา</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Phuket">ภูเก็ต</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Krabi">กระบี่</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Nakhon_Si_Thammarat">นครศรีธรรมราช</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Trang">ตรัง</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Phatthalung">พัทลุง</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Songkhla">สงขลา</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Satun">สตูล</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Pattani">ปัตตานี</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Yala">ยะลา</a></li>
+              <li><a class="dropdown-item" href="draft03.html?province=Narathiwat">นราธิวาส</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html?#highlights">Highlights</a>
+          </li>      
+          <li class="nav-item">
+            <a class="nav-link" href="whattoeat.html">What to eat</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="favorites.html">Favorites</a>
+          </li>      
+        </ul>
+        <hr>
+        <!-- **จะใส่เป็น MEMBER / LOGIN ** -->
+        <a href="login.html" id="logbox">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+        </a>
+        <br>
+      </div>
+    </div>
+  </nav>
+<!-- END OF HEADER-->
+    
+       <!-- MAIN CONTENT -->
+       <div class="pictag">
+        <img src="images/randomFood/randomDish.png"id="randomImage"/>
+       </div>
+        
+
+        <div class="nametag">
+          <div>What to eat ?<i>กินอะไรดี...</i></div>
+          <div id="name">?</div>
+          <div id="name2" style="font-size: 22px;"></div>
+          <div></div>
+        </div>
+        <button id="newname" class="newname">กดเพื่อสุ่ม</button>
+
+
+        <script src="random.js"></script>
+
+</body>
+</html>
