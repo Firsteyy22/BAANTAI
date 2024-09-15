@@ -1,1 +1,2 @@
 # BAANTAI
+The BAANTAI project is a website dedicated to showcasing Thai Southern food, allowing users to explore menus from various provinces in the southern region of Thailand. It features not only detailed menus but also instructional cooking videos. Additionally, the website includes a function for randomly selecting dishes, perfect for those craving Southern Thai cuisine but unsure of what to order.
