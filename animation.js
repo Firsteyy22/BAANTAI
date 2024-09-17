@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     // Hide all articles except the Ranong article
 
-        const pathInit = document.querySelectorAll('path#Ranong');
+        const pathInit = document.querySelector('path#Ranong');
     pathInit.classList.add("active");
 
     const articles = document.querySelectorAll('.article-wrapper');
