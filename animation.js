@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
     // Hide all articles except the Ranong article
+
+        const pathInit = document.querySelectorAll('path#Ranong');
+    pathInit.classList.add("active");
+
     const articles = document.querySelectorAll('.article-wrapper');
     articles.forEach((article) => {
       if (article.id === 'Ranong') {
